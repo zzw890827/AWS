@@ -1,6 +1,6 @@
 # AWS SAA知识点总结
 
-## 最重要服务
+## 1. 最重要服务
 
 - [ ] VPC
    - [ ] ACL
@@ -12,14 +12,14 @@
 - [ ] RDS
 - [ ] S3
 
-## 重要服务
+## 2. 重要服务
 
 - [ ] Route53
 - [ ] CloudWatch
 - [ ] CloudFormation
 - [ ] CloudFront
 
-## 其他服务
+## 3. 其他服务
 
 - [ ] SQS
 - [ ] SNS
