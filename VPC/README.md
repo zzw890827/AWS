@@ -31,22 +31,28 @@
 
 ### 问题
 
-1. 一家公司需要记录私有子网中所有IP包（源，目标，协议），最佳解决方案是什么？（#1-8）
+1. 一家公司需要记录私有子网中所有IP包（源，目标，协议），最佳解决方案是什么？（#1-8-C01）
    - [ ] A. 使用[VPC flow logs](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/flow-logs.html)。
    - [ ] B. 使用EC2上的`source destination checkout`。
    - [ ] C. 使用[AWS CloudTrail](https://docs.aws.amazon.com/zh_cn/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)并且使用S3存储日志文件。
    - [ ] D. 使用[Amazon CloudWatch](https://docs.aws.amazon.com/zh_cn/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)进行监控
    
-2. 一个应用运行在私有子网的EC2实例上，这个应用需要读写`Amazon Kinesis Data Streams`上的数据。但是该公司要求读取数据的流不能流向万维网（Internet），最佳解决方案是什么？（#1-39）
+2. 一个应用运行在私有子网的EC2实例上，这个应用需要读写`Amazon Kinesis Data Streams`上的数据。但是该公司要求读取数据的流不能流向万维网（Internet），最佳解决方案是什么？（#1-39-C01）
    - [ ] A. 在一个共有子网中配置一个[NAT网关（NAT Gateway）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-nat-gateway.html)并且将读写流路由到`Kinesis`服务上。
    - [ ] B. 为`Kinesis`配置一个[网关 VPC 终端节点（Gateway VPC Endpoint）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpce-gateway.html)并且通过其将读写流路由到`Kinesis`服务上。
    - [ ] C. 为`Kinesis`配置一个[接口 VPC 终端节点（Interface VPC Endpoint）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpce-interface.html)并且通过其将读写流路由到`Kinesis`服务上。
    - [ ] D. 为`Kinesis`配置一个[AWS Direct Connect 虚拟接口](https://docs.aws.amazon.com/zh_cn/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html)并且通过其将读写流路由到`Kinesis`服务上。
 
-3. 你启动了一个实例并且将它用作在公共子网中NAT设备。接着你修改路由表，在私有子网中将此NAT设备变更成互联网流的目标，当你试图使用此私有子网中的实例去连接外网（outbount connection）,你发现这并不成功，什么操作能解决这个问题？（#1-47）
+3. 您启动了一个实例并且将它用作在公共子网中NAT设备。接着你修改路由表，在私有子网中将此NAT设备变更成互联网流的目标，当你试图使用此私有子网中的实例去连接外网（outbount connection）,你发现这并不成功，什么操作能解决这个问题？（#1-47-C01）
    - [ ] A. 为这个NAT实例添加[弹性网络接口（Elasitc Network Interface）](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/using-eni.html)，并把它加入到私有子网中。
    - [ ] B. 为这个NAT实例添加[弹性IP地址（Elasitc IP Address）](hhttps://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)。
    - [ ] C. 为这个NAT实例添加另外一个弹性网络接口（Elasitc Network Interface）并把它加入到公有子网中。
    - [ ] D. 停止这个NAT实例上的[Source/Destination Check](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/VPC_NAT_Instance.html)功能。
-   
+
+4. 作为架构师，您正在使用AWS进行数据库服务器托管，除了必要的升级文件需要下载以外，这台服务器不允许链接因特网，以下哪项服务适合该项需求？（#1-7-C02）
+   - [ ] A. 将数据库服务器配置在公有子网中，使用ACL将网络设置为只允许入站流量通过。
+   - [ ] B. 将数据库服务器配置在公有子网中，使用安全组将网络设置为只允许入站流量通过。
+   - [ ] C. 将数据库服务器配置在私有子网中，使用安全组将网络设置为只允许出站流量通过。
+   - [ ] D. 将数据库服务器配置在私有子网中，并在路由表中配置NAT实例。
+
 ### 解答
