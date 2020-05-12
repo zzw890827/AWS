@@ -71,4 +71,10 @@
    - [ ] C. AWS Direct Connect。
    - [ ] D. NAT
 
+5. B公司的基干业务均在AWS中，最近您所在的A公司收购了B公司，由于B公司的基干业务很重要，所以公司决定保留。现在A公司的VPC内的实例需要访问B公司内的VPC中的资源。以下解决方案中最合适的是什么？（#1-21-C02）
+   - [ ] A. 设置NAT实例，实现VPC间的通信。
+   - [ ] B. 设置NAT网关，实现VPC间的通信。
+   - [ ] C. 使用AWS Organizations
+   - [ ] D. 通过VPC Peering实现VPC间的通信。
+
 ### 解答
