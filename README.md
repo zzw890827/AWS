@@ -6,6 +6,7 @@
    - [ ] ACL
    - [ ] NAT
    - [ ] VPC Flow Logs
+   - [ ] VPC Endpoints
 - [ ] IAM
 - [ ] EC2
 - [ ] ELB
