@@ -114,4 +114,11 @@
     - [ ] D. 在私有子网中设置NAT实例。
     - [ ] E. 在私有子网中设置Internet网关。
 
+13. （多选）能实现数据迁移到AWS的方法有哪些？。（#2-57-C02）
+    - [ ] A. Direct Connect。
+    - [ ] B. IPsec VPN。
+    - [ ] C. VPC Peering。
+    - [ ] D. Storage Gateway。
+    - [ ] E. VPN CloudHub。
+
 ### 解答
