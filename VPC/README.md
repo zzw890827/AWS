@@ -140,4 +140,10 @@
     - [ ] C. 本地服务器通过硬件VPN与A相连。
     - [ ] D. 本地服务器通过硬件VPN与B相连。
 
+17. 您正在利用AWS构建Web应用，该应用将通过VPC与DynamoDB相连接，实现这一需求的服务是什么？（#4-16-C02）
+    - [ ] A. 网关VPC终端节点。
+    - [ ] B. VPC Peering。
+    - [ ] C. VPC API Gateway。
+    - [ ] D. VPC终端节点服务（AWS PrivateLink）
+
 ### 解答
