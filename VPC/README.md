@@ -1,8 +1,17 @@
 # VPC
 
-## 概述
+## 重要概念
 
-1. [官方文档](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/what-is-amazon-vpc.html)
+您可以首先参照一下VPC的[官方文档](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/what-is-amazon-vpc.html)
+
+### 公有子网和私有子网
+
+AWS中没有指定公有子网和私有子网的属性，要理解这个概念需要理解`路由表`，`路由`和`Internet网关`。
+
+1. 路由表
+    一个网络中的网络请求被发起后，需要通过路由器来分发（路由）向目标。VPC也有这么一个路由器,这个路由器负责路由VPC内的所有网络请求，包括VPC内部实例（机器）之间的网络请求，以及进出Internet的网络请求。VPC通过查找路由表中的配置，从匹配到的配置项中确定目标，然后将网络请求路由给这个目标。每个子网都需要关联一张路由表，也就是绑定一张路由表。
+
+
 
 ## CIDR
 
