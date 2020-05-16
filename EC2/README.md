@@ -11,7 +11,7 @@
 
 1. AWS Direct Connect Gateway
 2. Inter Region VPC Peering
-3. EC2区域间复制
+3. EC2区域间AMI复制
 4. S3区域间替代
 5. RDS区域间复制
 6. DynamoDB区域间复制
