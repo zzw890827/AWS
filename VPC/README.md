@@ -83,6 +83,10 @@ VPC共享允许多个AWS账户在共享的集中式管理的VPC。
 
 - 网络访问控制列表 (ACL) 是 VPC 的一个可选安全层，可用作防火墙来控制进出一个或多个子网的流量。
 
+## VPC Endpoint
+
+VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终端节点服务（由AWS PrivateLink提供支持），而无需Internet网关、NAT设备、VPN连接或AWS Direct Connect连接。VPC中的实例无需公有IP地址便可与服务中的资源通信。VPC和其他服务之间的通信不会离开Amazon网络。
+
 ## 模拟题
 
 ### 问题
