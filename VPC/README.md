@@ -32,6 +32,14 @@ VPC内的数据流出到Internet以及Internet上的数据流入到VPC都要经�
 
 - Internet与私有子网的连接（例如在家中使用SSH远程登录公司私有子网中的实例）：在公有子网中设置一条堡垒机（Bastion），通过堡垒机转发从Internet过来的请求。
 
+## 共享VPC
+
+VPC共享允许多个AWS账户在共享的集中式管理的VPC。
+
+### 1. 先决条件
+
+通过[AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs)启用共享。
+
 ## CIDR
 
 [CIDR计算器](http://www.subnet-calculator.com/cidr.php)
