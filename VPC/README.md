@@ -40,6 +40,16 @@ VPC共享允许多个AWS账户在共享的集中式管理的VPC。
 
 通过[AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs)启用共享。
 
+### 权限
+
+1. 拥有者权限
+   - 负责创建、管理和删除所有 VPC 级别的资源。
+   - 无法修改或删除参与者资源。
+
+2. 参与者权限
+   - 负责创建、管理和删除其资源。
+   - 无法查看或修改属于其他参与者账户的资源。
+
 ## CIDR
 
 [CIDR计算器](http://www.subnet-calculator.com/cidr.php)
