@@ -89,7 +89,7 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
 
 一句话概括：VPC Endpoint可以使处在私有子网的EC2不经过Internet连接Amazon中的其他服务。
 
-### 接口VPC终端节点（Interface VPC Endpoint）
+### 1. 接口VPC终端节点（Interface VPC Endpoint）
 
 利用接口VPC终端节点（接口终端节点），您可连接到由AWS PrivateLink提供支持的服务。
 
@@ -102,6 +102,14 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
    - 仅在同一地区内支持终端节点。无法在 VPC 和其他区域内的服务之间创建终端节点。
    - 终端节点仅支持 IPv4 流量。
    - 无法将终端节点从一个 VPC 转移到另一个 VPC，也无法将终端节点从一项服务转移到另一项服务。
+   
+### 2. 网关VPC终端节点（Gateway VPC Endpoint）
+
+适用于S3和DynamoDB的VPC终端节点。
+
+### 3. VPC终端节点服务
+
+在VPC中创建自己的应用程序并将其配置为AWS PrivateLink支持的服务。
 
 ## 模拟题
 
