@@ -283,7 +283,7 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
     - [ ] A. 将源设置为-1。
     - [ ] B. 将源设置为该VPC的CIDR。
     - [ ] C. 将源设置为Auto Scaling组的id。
-    - [ ] D. 将原设置为uto Scaling组的安全组的id。
+    - [ ] D. 将原设置为Auto Scaling组的安全组的id。
     
 
 ### 解答
