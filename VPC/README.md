@@ -239,4 +239,25 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
     - [ ] C. 正确配置路由表。
     - [ ] D. 在公有子网中加入NAT网关。
 
+21. 作为架构助理，您接手了某知名电商网站迁移到VPC的任务。之前的架构师已经部署了三层VPC，它们ID分别是：
+    - VPC： vpc-2f8tLC447
+    - IGW： igw-2d8bc445
+    - ACL： acl-2080c448
+    - Web服务器子网： subnet-258bc44d
+    - 后端服务器子网： subnet-248bc44c
+    - 数据库服务器： subnet-9189c6f9
+    - 路由表： rtb-2i8bc449和rtb-238bc44b
+    
+    子网和路由表的关联关系是：
+    
+    - subnet-258bc44d关联rtb-2i8bc449
+    - subnet-248bc44c关联rtb-238bc44b
+    - subnet-9189c6f9关联rtb-238bc44b
+    
+    数据库服务器不允许直接访问Internet。以下哪些配置可以实现远程SSH登录后端服务器和数据库服务器以及数据库服务器和后端服务器的包更新？（#2-9-C01）
+    - [ ] A. 在子网`subnet-258bc44d`中创建一台堡垒机和一个NAT实例，并且加入从`rtb-238bc44b`到`subnet-258bc44d`的路由。
+    - [ ] B. 在子网`subnet-248DC44c`中创建一套堡垒机和一个NAT实例，并且加入从`rtb-238bc44b`到`igw-2d8bc445`的路由。
+    - [ ] C. 在子网`subnet-258bc44d`中创建一台堡垒机和一个NAT实例,并且加入从`rtb-238bc44d`到`igw-2d8bc445`的路由，并且在ACL加入允许`subnet-258bc44d`和`subnet-248bc44c`相互通信的规则。
+    - [ ] D. 在子网`subnet-258bc44d`中创建一台堡垒机和一个NAT实例，并且加入从`rtb-238bc44b`到NAT实例的路由。
+
 ### 解答
