@@ -121,7 +121,7 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
    - [ ] C. 使用`AWS CloudTrail`。
    - [ ] D. 使用`Amazon CloudWatch`。
    <details>
-   <summary>答案</summary>
+   <summary>查看答案</summary>
    
    - [x] A. 使用`VPC flow logs`。
    - [ ] B. 使用EC2上的`source destination checkout`。
@@ -131,58 +131,139 @@ VPC终端节点使您能够将VPC私密地连接到支持的AWS服务和VPC终�
    </details>
    
 2. 一个应用运行在私有子网的EC2实例上，这个应用需要读写`Amazon Kinesis Data Streams`上的数据。但是该公司要求读取数据的流不能流向万维网（Internet），最佳解决方案是什么？（#1-39-C01）
-   - [ ] A. 在一个共有子网中配置一个[NAT网关（NAT Gateway）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-nat-gateway.html)并且将读写流路由到`Kinesis`服务上。
-   - [ ] B. 为`Kinesis`配置一个[网关 VPC 终端节点（Gateway VPC Endpoint）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpce-gateway.html)并且通过其将读写流路由到`Kinesis`服务上。
-   - [ ] C. 为`Kinesis`配置一个[接口 VPC 终端节点（Interface VPC Endpoint）](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpce-interface.html)并且通过其将读写流路由到`Kinesis`服务上。
-   - [ ] D. 为`Kinesis`配置一个[AWS Direct Connect 虚拟接口](https://docs.aws.amazon.com/zh_cn/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html)并且通过其将读写流路由到`Kinesis`服务上。
+   - [ ] A. 在一个共有子网中配置一个`NAT网关（NAT Gateway）`并且将读写流路由到`Kinesis`服务上。
+   - [ ] B. 为`Kinesis`配置一个`网关 VPC 终端节点（Gateway VPC Endpoint）`并且通过其将读写流路由到`Kinesis`服务上。
+   - [ ] C. 为`Kinesis`配置一个`接口 VPC 终端节点（Interface VPC Endpoint）`并且通过其将读写流路由到`Kinesis`服务上。
+   - [ ] D. 为`Kinesis`配置一个`AWS Direct Connect 虚拟接口`并且通过其将读写流路由到`Kinesis`服务上。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 在一个共有子网中配置一个`NAT网关（NAT Gateway）`并且将读写流路由到`Kinesis`服务上。
+   - [ ] B. 为`Kinesis`配置一个`网关 VPC 终端节点（Gateway VPC Endpoint）`并且通过其将读写流路由到`Kinesis`服务上。
+   - [x] C. 为`Kinesis`配置一个`接口 VPC 终端节点（Interface VPC Endpoint）`并且通过其将读写流路由到`Kinesis`服务上。
+   - [ ] D. 为`Kinesis`配置一个`AWS Direct Connect 虚拟接口`并且通过其将读写流路由到`Kinesis`服务上。
+   
+   </details>
 
 3. 您启动了一个实例并且将它用作在公共子网中NAT设备。接着你修改路由表，在私有子网中将此NAT设备变更成互联网流的目标，当你试图使用此私有子网中的实例去连接外网（outbount connection）,你发现这并不成功，什么操作能解决这个问题？（#1-47-C01）
-   - [ ] A. 为这个NAT实例添加[弹性网络接口（Elasitc Network Interface）](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/using-eni.html)，并把它加入到私有子网中。
-   - [ ] B. 为这个NAT实例添加[弹性IP地址（Elasitc IP Address）](hhttps://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)。
-   - [ ] C. 为这个NAT实例添加另外一个弹性网络接口（Elasitc Network Interface）并把它加入到公有子网中。
-   - [ ] D. 停止这个NAT实例上的[Source/Destination Check](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/VPC_NAT_Instance.html)功能。
+   - [ ] A. 为这个NAT实例添加`弹性网络接口（Elasitc Network Interface）`，并把它加入到私有子网中。
+   - [ ] B. 为这个NAT实例添加`弹性IP地址（Elasitc IP Address）]`。
+   - [ ] C. 为这个NAT实例添加另外一个`弹性网络接口（Elasitc Network Interface）`并把它加入到公有子网中。
+   - [ ] D. 停止这个NAT实例上的`Source/Destination Check`功能。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 为这个NAT实例添加`弹性网络接口（Elasitc Network Interface）`，并把它加入到私有子网中。
+   - [ ] B. 为这个NAT实例添加`弹性IP地址（Elasitc IP Address）]`。
+   - [ ] C. 为这个NAT实例添加另外一个`弹性网络接口（Elasitc Network Interface）`并把它加入到公有子网中。
+   - [x] D. 停止这个NAT实例上的`Source/Destination Check`功能。
+   
+   </details>
 
 4. 作为架构师，您正在使用AWS进行数据库服务器托管，除了必要的升级文件需要下载以外，这台服务器不允许链接因特网，以下哪项服务适合该项需求？（#1-7-C02）
    - [ ] A. 将数据库服务器配置在公有子网中，使用ACL将网络设置为只允许入站流量通过。
    - [ ] B. 将数据库服务器配置在公有子网中，使用安全组将网络设置为只允许入站流量通过。
    - [ ] C. 将数据库服务器配置在私有子网中，使用安全组将网络设置为只允许出站流量通过。
    - [ ] D. 将数据库服务器配置在私有子网中，并在路由表中配置NAT实例。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 将数据库服务器配置在公有子网中，使用ACL将网络设置为只允许入站流量通过。
+   - [ ] B. 将数据库服务器配置在公有子网中，使用安全组将网络设置为只允许入站流量通过。
+   - [ ] C. 将数据库服务器配置在私有子网中，使用安全组将网络设置为只允许出站流量通过。
+   - [x] D. 将数据库服务器配置在私有子网中，并在路由表中配置NAT实例。
+   
+   </details>
 
 5. 您所在的公司将要将本地文件服务器的数据迁移到AWS中。本地文件服务器的数据量很大，为了节省工期，数据迁移时需要维持50Mbps的高速专用线路，下列哪种方法最适合？（#1-13-C02）
    - [ ] A. VPC Peering。
    - [ ] B. VPN。
    - [ ] C. AWS Direct Connect。
    - [ ] D. NAT
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. VPC Peering。
+   - [ ] B. VPN。
+   - [x] C. AWS Direct Connect。
+   - [ ] D. NAT
+   
+   </details>
 
 6. B公司的基干业务均在AWS中，最近您所在的A公司收购了B公司，由于B公司的基干业务很重要，所以公司决定保留。现在A公司的VPC内的实例需要访问B公司内的VPC中的资源。以下解决方案中最合适的是什么？（#1-21-C02）
    - [ ] A. 设置NAT实例，实现VPC间的通信。
    - [ ] B. 设置NAT网关，实现VPC间的通信。
    - [ ] C. 使用AWS Organizations。
    - [ ] D. 通过VPC Peering实现VPC间的通信。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 设置NAT实例，实现VPC间的通信。
+   - [ ] B. 设置NAT网关，实现VPC间的通信。
+   - [ ] C. 使用AWS Organizations。
+   - [x] D. 通过VPC Peering实现VPC间的通信。
+   
+   </details>
 
 7. 您的公司于星期二临时决定将本地文件服务器中的1TB的文件迁移到AWS中，迁移作业在当周星期五开始下周一结束，合计72小时。此次迁移需要确保数据的安全。请选择最合适解决方案（#1-39-C02）
    - [ ] A. 使用Snowball。
    - [ ] B. 使用Direct Connect。
    - [ ] C. 与AWS站点建立VPN，并且使用VPN传输。
    - [ ] D. 使用Storag Gateway。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 使用Snowball。
+   - [ ] B. 使用Direct Connect。
+   - [x] C. 与AWS站点建立VPN，并且使用VPN传输。
+   - [ ] D. 使用Storag Gateway。
+   
+   </details>
 
-8. 您所在的公司使用的VPC拥有一个私有子网和一个公有子网，专有子网中有一个EC2实例充当数据库服务器，公有子网中有一个NAT实例，供私有子网中的服务器与因特网通信。作为维护人员，最近您发现NAT实例效率不是很高，那么请问您怎样改善？（#1-55-C02）
+8. 您所在的公司使用的VPC拥有一个私有子网和一个公有子网，专有子网中有一个EC2实例充当数据库服务器，公有子网中有一个NAT实例，供私有子网中的服务器与因特网通信。作为维护人员，最近您发现NAT可用性不是很高，那么请问您怎样改善？（#1-55-C02）
    - [ ] A. 扩充带宽。
    - [ ] B. 使用VPC Endpoint。
    - [ ] C. 用NAT Gateway取代NAT实例。
    - [ ] D. 提高NAT实例的性能。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 扩充带宽。
+   - [ ] B. 使用VPC Endpoint。
+   - [x] C. 用NAT Gateway取代NAT实例。
+   - [ ] D. 提高NAT实例的性能。
+   
+   </details>
 
 9. 您所在的公司员工通过部署在私有子网中的EC2实例访问S3并获取机密文件。公司的政策是这一过程不允许通过因特网，请问怎样解决？（#1-59-C02）
    - [ ] A. 设置安全组以实现需求。
    - [ ] B. 对S3的数据进行加密。
    - [ ] C. 使用VPC Endpoint。
    - [ ] D. 使用NAT实例。
+   <details>
+   <summary>查看答案</summary>
+   
+   - [ ] A. 设置安全组以实现需求。
+   - [ ] B. 对S3的数据进行加密。
+   - [x] C. 使用VPC Endpoint。
+   - [ ] D. 使用NAT实例。
+   
+   </details>
 
-10. 您正在为公司构筑VPC。该VPC拥有一个公共子网，并且使用Internet Gateway。但是您发现通过SSH无法连接公共子网中的EC2，而且您为该EC2设置了公共IP，请问如何解决上述问题？（#1-64-C02）
+10. 您正在为公司构筑VPC。该VPC拥有一个公共子网，并且使用Internet Gateway。但是您发现通过SSH无法连接公共子网中的EC2，但是您已经为该EC2设置了公共IP，请问如何解决上述问题？（#1-64-C02）
     - [ ] A. 检查路由表是否正确。
     - [ ] B. 设置弹性IP。
     - [ ] C. 为EC2设置第二IP。
     - [ ] D. 设置NAT Gateway。
+    <details>
+    <summary>查看答案</summary>
+   
+    - [x] A. 检查路由表是否正确。
+    - [ ] B. 设置弹性IP。
+    - [ ] C. 为EC2设置第二IP。
+    - [ ] D. 设置NAT Gateway。
+   
+    </details>
 
 11. 您正在为公司系统构筑VPC，其包含两个公共子网和两个私有子网，目前公司规模200人，不想过多并且合适的VPC的CIDR设置应该是？（#2-27-C02）
     - [ ] A. /21。
