@@ -62,3 +62,9 @@ AWS Identity and Access Management(IAM)是一种Web服务，可以帮助您安�
    - [ ] B. 利用SSL对RDS的访问进行加密。
    - [ ] C. 通过对EC2实例上设置IAM角色来授予对RDS的访问权。
    - [ ] D. 通过STS临时授予RDS的访问权，
+
+4. 一家公司在本地和AWS云中都托管系统。该公司需要使用存储在Active Directory中的内部凭据来确保所有用户都可以在两种环境中访问资源。能实现这一需求的犯法是什么？（#2-42-C02）
+   - [ ] A. IAM组。
+   - [ ] B. AWS Cognito。
+   - [ ] C. AWS Organization中的Active Directory服务。
+   - [ ] D. AWS SAML。
