@@ -70,3 +70,63 @@ AWS Identity and Access Management(IAM)是一种Web服务，可以帮助您安�
    - [ ] B. AWS Cognito。
    - [ ] C. AWS Organization中的Active Directory服务。
    - [ ] D. AWS SAML。
+
+5. 您的公司正在经营一套托管在AWS上的系统。您决定引入新的API网关来实现应用间的协作。因此，作为API网关的权限管理，有必要将适当级别的权限授予开发人员，IT管理员和用户以进行管理。请选择最合适的设置方法来实实现上述权限管理？（#1-25-C02）
+   - [ ] A. 利用STS对不同的用户授予访问权。
+   - [ ] B. 利用IAM策略对不同的用户授予访问权。
+   - [ ] C. 利用AWS Config对不同的用户授予访问权。
+   - [ ] D. 利用AWS用户访问密匙对不同的用户授予访问权。
+
+6. 以下IAM策略用于设置EC2实例的权限：
+
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Action": "ec2:*",
+         "Effect": "Allow",
+         "Resource": "*"
+       },
+       {
+         "Effect": "Deny",
+         "Action": [
+           "ec2:*ReservedInstances*",
+           "ec2:TerminateInstances"
+         ],
+         "Resource": "*"
+       }
+     ]
+   }
+   ```
+
+   下列描述正确的是：（#1-32-C02）
+
+   - [ ] A. 允许对预留实例（EC2 RI）的操作。
+   - [ ] B. 关于EC2实例的所有操作都是被允许的。
+   - [ ] C. 对于所有的EC2，终止操作是被拒绝的。
+   - [ ] D. 对于所有的预留实例（EC2 RI），终止操作是被拒绝的。
+
+7. 您是构建某移动应用程序的解决方案架构师。此移动应用程序允许您将照片存储在S3上，并使用与OpenID Connect兼容的身份提供程序登录到您的应用程序。AWS STS通过授予权限的机制用于用户的临时访问。选择如何为此应用程序配置AWS STS。（#3-38-C02）
+   - [ ] A. 授予跨账户访问权限。
+   - [ ] B. SAML ID联合验证。
+   - [ ] C. Web ID联合验证。
+   - [ ] D. IAM角色设定。
+
+8. 您的公司使用AWS Organizations在OU的基础上实施访问控制。您在OU1中添加了一个设置，允许对EC2和S3拥有所有权。接下来，对于OU1中的IAM用户，您设置了以下策略：仅EC2的删除权限为Deny，其他EC2操作为允许。除此之外再没有其他策略。请选择该IAM用户的权限状态。（#3-41-C02）
+   - [ ] A. EC2的操作中，仅删除是被禁止的。
+   - [ ] B. EC2和S3的所有操作都被允许。
+   - [ ] C. EC2的操作中，仅删除是被禁止的，S3的所有操作都是被允许的。
+   - [ ] D. 只有EC2的所有操作是被允许的。
+
+9. 公司A使用一个AWS账户（ID890209911），并通过划分IAM组在多个部门中使用AWS资源。我们为开发组分配一个描述性标识符，并发布在AWS管理页面的登录页面的URL上。使用AWS CLI命令`iam create-account-alias --account-alias development-group`选择创建的AWS账户的登录页面URL是？（#3-55-C02）
+   - [ ] A. `https://development-group.signin.aws.amazon.com/console/`
+   - [ ] B. `https://development-group.aws.amazon.com/console/`
+   - [ ] C. `https://development-group.aws.signin.amazon.com/console/`
+   - [ ] D. `https://890209911.signin.aws.amazon.com/console/`
+
+10. 您的客户刚刚选用AWS进行服务托管。该公司通过Active Directory实现权限管理，但是有必要通过AWS IAM有效地将其与权限管理一起使用，怎样实现这一需求？（#3-61-C02）
+    - [ ] A. Simple AD
+    - [ ] B. AWS Cognito
+    - [ ] C. AWS Inspector
+    - [ ] D. AWS Connector
