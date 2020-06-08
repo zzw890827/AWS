@@ -4,6 +4,36 @@
 
 AWS Identity and Access Management(IAM)是一种Web服务，可以帮助您安全地控制对AWS资源的访问。您可以使用IAM控制对哪个用户进行身份验证(登录)和授权 (具有权限)以使用资源。[官方文档传送门](https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/introduction.html)。
 
+## 登录到AWS
+
+- 使用跟账户登录（不推荐）
+- 使用IAM用户登录
+
+### AWS账户ID以及别名
+
+- 默认登录页面URL
+
+```html
+https://Your_Account_ID.signin.aws.amazon.com/console/
+```
+
+- 带别名的登录页面URL
+
+```html
+https://Your_Account_Alias.signin.aws.amazon.com/console/
+```
+
+其中默认登录页面URL和带别名的登录URL都可以使用。
+
+## 身份
+
+简单的讲身份就是用户。
+
+- AWS 账户根用户：当您首次创建AWS账户时，最初使用的是一个对账户中所有AWS服务和资源有完全访问权限的单点登录身份。此身份称为AWS账户根用户，可使用您创建账户时所用的电子邮件地址和密码登录来获得此身份。
+- IAM用户：在AWS中创建的实体。IAM 用户的主要用途是使人们能够登录到 AWS 管理控制台以执行交互式任务，并向使用API或CLI的AWS服务发出编程请求。
+- IAM组：IAM用户的集合，仅仅是个便利功能，他不能在基于资源的策略或信任策略中将其标识为`Principal`。
+- IAM角色：是一个实体，具有确定其在AWS中可执行和不可执行的操作的权限策略，但是，角色没有任何关联的凭证（密码或访问密钥）。角色旨在让需要它的任何人代入，而不是唯一地与某个人员关联。
+
 ## 模拟题
 
 1. 关于以下IAM策略：
