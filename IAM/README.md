@@ -263,7 +263,7 @@ https://Your_Account_Alias.signin.aws.amazon.com/console/
     - [ ] D. IAM组
     - [ ] E. IAM用户
 
-15. 您的公司使用AWS Organizations在OU的基础上实施访问控制。在默认的`FullAWSAccess`被设置的情况下，对于EC2实例又追加了允许EC2实例具有所有权限的设置。在这种情况下，请说明OU中成员帐户的权限状态。（#4-56-C02）
+15. 您的公司使用AWS Organizations在OU的基础上实施访问控制。在默认的`FullAWSAccess`被设置的情况下，对于EC2实例又追加了允许对EC2做任何操作的权限的设置。在这种情况下，请说明OU中成员帐户的权限状态。（#4-56-C02）
     - [ ] A. 只能对EC2进行全操作。
     - [ ] B. 由于默认设置会自动失效，所以EC2以外的资源无法操作。
     - [ ] C. 由于默认设置会自动失效，所以只能操作EC以外的资源。
