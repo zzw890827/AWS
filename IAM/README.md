@@ -6,7 +6,7 @@ AWS Identity and Access Management(IAM)是一种Web服务，可以帮助您安�
 
 ## 登录到AWS
 
-- 使用跟账户登录（不推荐）
+- 使用根账户登录（不推荐）
 - 使用IAM用户登录
 
 ### AWS账户ID以及别名
@@ -33,6 +33,53 @@ https://Your_Account_Alias.signin.aws.amazon.com/console/
 - IAM用户：在AWS中创建的实体。IAM 用户的主要用途是使人们能够登录到 AWS 管理控制台以执行交互式任务，并向使用API或CLI的AWS服务发出编程请求。
 - IAM组：IAM用户的集合，仅仅是个便利功能，他不能在基于资源的策略或信任策略中将其标识为`Principal`。
 - IAM角色：是一个实体，具有确定其在AWS中可执行和不可执行的操作的权限策略，但是，角色没有任何关联的凭证（密码或访问密钥）。角色旨在让需要它的任何人代入，而不是唯一地与某个人员关联。
+- 临时证书：主要用于IAM角色。
+
+这里IAM用户和IAM角色比较类似，但是应用场景不同。
+
+- 使用IAM用户
+  - 跟用户为自己创建IAM用户。
+  - 为需要访问AWS控制台的人员创建IAM用户。
+
+- 使用IAM角色
+  - 在EC2实例上运行的应用程序，该应用程序需要向AWS发出请求，此时创建附加到EC2实例的IAM角色来向实例上运行的应用程序提供临时安全凭证。
+  - 运行在手机上的应用，该应用需要向AWS发出请求。
+
+### IAM用户
+
+- 根用户：AWS账户创建时的用户。需要根用户凭证的AWS服务：
+  - 更改账户设置：修改用户名，密码，电子邮件。
+  - 更改AWS Support计划。
+  - 查看特定的税发票。
+  - 恢复IAM用户权限。
+  - 已在预留实例市场中注册为卖家。
+  - 创建CloudFront密匙对。
+  - 配置 Amazon S3 存储桶以启用 MFA（多重验证）删除。
+  - 编辑或删除一个包含无效VPCID或VPC终端节点ID的AmazonS3存储桶策略。
+  - 注册 GovCloud。
+  - 关闭AWS账户。
+
+### 允许用户更改自己的密码
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetAccountPasswordPolicy",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:ChangePassword",
+      "Resource": "arn:aws:iam::account-id-without-hyphens:user/${aws:username}"
+    }
+  ]
+}
+```
+
+其中，`ChangePassword`是授予更改密码权限，`GetAccountPasswordPolicy`是让`Change Password`能在页面显示。
 
 ## 模拟题
 
@@ -160,3 +207,64 @@ https://Your_Account_Alias.signin.aws.amazon.com/console/
     - [ ] B. AWS Cognito
     - [ ] C. AWS Inspector
     - [ ] D. AWS Connector
+
+11. 作为解决方案架构师，您正在使用AWS实施账户管理，首先，您需要创建一个IAM用户并向AWS用户颁发账户权限。您需要两个具有管理员权限的用户的IAM策略。最容易实现以上权限管理需求的是下列哪一个？（#4-13-C02）
+    - [ ] A. AWS管理策略中的管理者权限
+    - [ ] B. 内联策略
+    - [ ] C. 第三方策略
+    - [ ] D. 客户管理的策略
+
+12. 某跨国公司正在将公司内系统全面迁移到AWS上。该公司在每个国家都有多个AWS账户，并且财务，人力资源等部门也有自己的专用AWS账户，为了遵守公司的安全政策，您应确保对每个帐户拥有控制权，从而使各个账户能够访问和操作特定的资源，能满足以上需求的是哪一项？。（#4-28-C02）
+    - [ ] A. IAM组
+    - [ ] B. IAM内联策略
+    - [ ] C. AWS Oranizations
+    - [ ] D. AWS System Manager
+
+13. 以下IAM策略用于设置EC2实例的权限：
+
+    ```json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem"
+          ],
+          "Resource": [
+            "arn:aws:dynamodb:us-west-1:123456789012:table/myDynamoTable"
+          ],
+          "Condition": {
+            "ForAllValues:StringEquals": {
+              "dynamodb:LeadingKeys": [
+                "${cognito-identity.amazonaws.com:sub}"
+              ]
+            }
+          }
+        }
+      ]
+    }
+    ```
+
+    下列描述正确的是：（#1-35-C02）
+
+    - [ ] A. 分配了该策略的用户可以删除`myDynamoTable`以外的`DynamoDB`表。
+    - [ ] B. 分配了该策略的用户如果拥有CoginitoID，就可以访问`DynamoDB`。
+    - [ ] C. 分配了该策略的用户如果拥有CoginitoID就可以删除`myDynamoTable`以外的`DynamoDB`表。
+    - [ ] D. 分配了该策略的用户可以更细`DynamoDB`表。
+
+14. （多选）您正在通过AWS控制台向开发人员授权。公司要求联合身份验证和基于角色的访问控制。当前，Active Directory中的组用于将角色分配给开发用户，如何实现联合身份验证和基于角色的访问控制（#4-50-C02）
+    - [ ] A. AWS Directory Service Simple AD
+    - [ ] B. AWS Directory Service AD connector
+    - [ ] C. IAM角色
+    - [ ] D. IAM组
+    - [ ] E. IAM用户
+
+15. 您的公司使用AWS Organizations在OU的基础上实施访问控制。在默认的`FullAWSAccess`被设置的情况下，对于EC2实例又追加了允许EC2实例具有所有权限的设置。在这种情况下，请说明OU中成员帐户的权限状态。（#4-56-C02）
+    - [ ] A. 只能对EC2进行全操作。
+    - [ ] B. 由于默认设置会自动失效，所以EC2以外的资源无法操作。
+    - [ ] C. 由于默认设置会自动失效，所以只能操作EC以外的资源。
+    - [ ] D. 可以做任何操作。
